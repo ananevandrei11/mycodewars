@@ -6,11 +6,9 @@ const BASIC_AUTH_PASSWORD = process.env.BASIC_AUTH_PASSWORD as string;
 
 export function middleware(request: NextRequest) {
   const basicAuth = request.headers.get('Authorization');
-
   if (!BASIC_AUTH_USER || !BASIC_AUTH_PASSWORD) {
     return NextResponse.next();
   }
-
   if (basicAuth) {
     const auth = basicAuth.split(' ')[1];
     // Buffer is not used because TypeError in NextJS >= 12.2 https://nextjs.org/docs/api-reference/edge-runtime
@@ -21,7 +19,6 @@ export function middleware(request: NextRequest) {
       return NextResponse.next();
     }
   }
-
   request.nextUrl.pathname = '/api/login';
   return NextResponse.rewrite(request.nextUrl);
 }
