@@ -6,10 +6,10 @@ import {
   Heading,
   Image,
   Text,
-} from '@chakra-ui/react';
-import Link from 'next/link';
-import { Page } from 'types/Page';
-import { Project } from 'types/Project';
+} from "@chakra-ui/react";
+import Link from "next/link";
+import { Page } from "types/Page";
+import { Project } from "types/Project";
 
 type HomeProps = {
   projects: Project[];
@@ -50,7 +50,7 @@ const Home = (props: HomeProps) => {
               <Box key={p._id}>
                 <Link
                   href={{
-                    pathname: '/[...page]',
+                    pathname: "/[...page]",
                     query: { page: p.slug as string },
                   }}
                 >

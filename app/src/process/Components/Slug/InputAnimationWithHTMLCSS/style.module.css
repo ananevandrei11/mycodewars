@@ -1,0 +1,114 @@
+.root {
+  --first-color: #1a73e8;
+  --input-color: #808688;
+  --border-color: #dadce0;
+  --error-color: #e92020;
+  --success-color: rgba(125, 241, 17, 0.25);
+
+  --body-font: "Roboto", sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.75rem;
+
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+.root *,
+.root ::after,
+.root ::before {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form {
+  width: 369px;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+}
+
+.title {
+  margin: 0;
+  font-size: xx-large;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+.field {
+  position: relative;
+  height: 48px;
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: var(--normal-font-size);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 1rem;
+  background: none;
+  z-index: 1;
+}
+
+.label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0 0.25rem;
+  background-color: #fff;
+  color: var(--input-color);
+  font-size: var(--normal-font-size);
+  line-height: 1;
+  transition: 0.3s;
+}
+
+.submit {
+  display: block;
+  margin-left: auto;
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  background-color: var(--first-color);
+  border-radius: 0.5rem;
+  color: #fff;
+  font-style: var(--normal-font-size);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.input:focus + .label {
+  top: -0.5rem;
+  left: 0.8rem;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  z-index: 10;
+}
+
+.input:not(:placeholder-shown).input:not(:focus) + .label {
+  top: -0.5rem;
+  left: 0.8rem;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  z-index: 10;
+}
+
+.input:focus {
+  border: 1.5px solid var(--first-color);
+}
