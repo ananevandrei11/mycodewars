@@ -6,5 +6,9 @@ export const Pages = [
   {
     slug: 'login-form',
     name: 'Login Form'
+  },
+  {
+    slug: 'nav-menu-bottom',
+    name: 'Nav Menu Bottom'
   }
 ];
